@@ -56,7 +56,7 @@ function DisplayNAme(){
 
     };
 
-    const isFormValid = !error.firstName && !error.lastName && firstName && lastName;
+    
 
     return(
         <div>
@@ -83,7 +83,7 @@ function DisplayNAme(){
                 )
             }
             <br/>
-            <button type="submit" disabled={!isFormValid}>Submit</button>
+            <button type="submit">Submit</button>
 
             </form>
 
