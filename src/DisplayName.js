@@ -60,10 +60,10 @@ function DisplayNAme(){
 
     return(
         <div>
-            <form onSubmit={handleSubmit}>
+            <form >
             <h1>Full Name Display</h1>
             <label htmlFor="FirstName">First Name : </label>
-            <input id="FirstName"type="text" value={firstName} placeholder="Enter First Name" onChange={handleFirstName} ></input>
+            <input id="FirstName"type="text" value={firstName} placeholder="Enter First Name" onChange={handleFirstName} required></input>
             {
                 error.firstName && (
                     <p style={{
@@ -74,7 +74,7 @@ function DisplayNAme(){
             
             <br/>
             <label htmlFor="LastName">Last Name : </label>
-            <input id="LastName" type="text" value={lastName} placeholder="Enter First Name" onChange={handleLastName} ></input>
+            <input id="LastName" type="text" value={lastName} placeholder="Enter First Name" onChange={handleLastName} required></input>
             {
                 error.lastName && (
                     <p style={{
@@ -83,7 +83,7 @@ function DisplayNAme(){
                 )
             }
             <br/>
-            <button type="submit">Submit</button>
+            <button type="submit" onSubmit={handleSubmit} >Submit</button>
 
             </form>
 
