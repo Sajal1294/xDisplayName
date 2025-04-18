@@ -40,7 +40,7 @@ function DisplayNAme(){
 
 
     const handleSubmit=(e)=>{
-        e.preventDefault();
+        
         
         const firstNameError= validatename(firstName);
         const lastNameError= validatename(lastName)
