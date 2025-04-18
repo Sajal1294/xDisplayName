@@ -40,7 +40,7 @@ function DisplayNAme(){
 
 
     const handleSubmit=(e)=>{
-        
+        e.preventDefault();
         
         const firstNameError= validatename(firstName);
         const lastNameError= validatename(lastName)
@@ -63,7 +63,7 @@ function DisplayNAme(){
             <form onSubmit={handleSubmit}>
             <h1>Full Name Display</h1>
             <label htmlFor="FirstName">First Name : </label>
-            <input id="FirstName"type="text" value={firstName} placeholder="Enter First Name" onChange={handleFirstName} required></input>
+            <input id="FirstName"type="text" value={firstName} placeholder="Enter First Name" onChange={handleFirstName} ></input>
             {
                 error.firstName && (
                     <p style={{
@@ -74,7 +74,7 @@ function DisplayNAme(){
             
             <br/>
             <label htmlFor="LastName">Last Name : </label>
-            <input id="LastName" type="text" value={lastName} placeholder="Enter First Name" onChange={handleLastName} required></input>
+            <input id="LastName" type="text" value={lastName} placeholder="Enter First Name" onChange={handleLastName} ></input>
             {
                 error.lastName && (
                     <p style={{
