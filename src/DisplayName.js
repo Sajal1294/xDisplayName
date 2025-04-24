@@ -6,42 +6,20 @@ function DisplayNAme(){
     const [firstName,setFirstName]=useState('');
     const [lastName,setLastName]=useState('');
     const [fullName,setFullName]=useState('');
-    const [errors,setErrors]=useState({});
-
-    const validatename=(name)=>{
-        return /^[A-Za-z]+$/.test(name);
-    };
-    
 
 
 
 
     const handleSubmit=(e)=>{
         e.preventDefault();
-        
-        const newError={};
-        if(!firstName.trim()){
-            newError.firstName='first name is required';
-        }
-        else if(!validatename(firstName)){
-            newError='Only letteres are allowed'
-        }
 
-        if(!lastName.trim()){
-            newError.lastName='first name is required';
+        if(firstName.trim()!=="" && lastName.trim()!==""){
+            setFullName(`Full Name: ${firstName} ${lastName}`);
         }
-        else if(!validatename(lastName)){
-            newError='Only letteres are allowed'
-        }
-        setErrors(newError);
-
-        if(Object.keys(newError).length===0){
-            setFullName(`${firstName} ${lastName}`);
-        }
-
-        else {
+        else{
             setFullName("");
         }
+
     };
 
     
@@ -75,7 +53,7 @@ function DisplayNAme(){
 
             </form>
 
-            { fullName && (<p>Fullname: {fullName}</p>)
+            { fullName && (<div>{fullName}</div>)
             }
             
             
